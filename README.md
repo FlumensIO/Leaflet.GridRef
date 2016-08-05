@@ -10,6 +10,10 @@ var gridRef = new L.GridRef(options);
 gridRef.addTo(map);
 ```
 
+## Requirements
+
+OsGridRef and LatLon from [here](http://www.movable-type.co.uk/scripts/latlong-gridref.html)
+
 ## Line Options
 
 ```javascript
