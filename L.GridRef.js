@@ -23,7 +23,7 @@
     options: {
       color: 'gray',
       weight: 0.5,
-      opacity: 1,
+      opacity: 1
     },
 
     onAdd: function (map) {
@@ -166,8 +166,8 @@
       north = north > 1300000 ? 1300000 : north; // do not exceed
       east = east > 700000 ? 700000 : east; // do not exceed
 
-      return {west, south, north, east};
-    },
+      return {west: west, south: south, north: north, east: east};
+    }
   });
 
   L.gridRef = function (options) {
