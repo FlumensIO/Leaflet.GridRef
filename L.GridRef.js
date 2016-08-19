@@ -54,7 +54,11 @@
 
     _calcGraticule: function (step, bounds) {
       // calculate grid start
-      var {south, north, east, west} = this._getGraticuleBounds(bounds, step);
+      var newBounds = this._getGraticuleBounds(bounds, step);
+      var south = newBounds.south;
+      var north = newBounds.north;
+      var east = newBounds.east;
+      var west = newBounds.west;
 
       // calculate grid steps
       var sideSteps = (east - west) / step;
