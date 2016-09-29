@@ -1,0 +1,25 @@
+{
+  "name": "leaflet.gridref",
+  "version": "1.0.0",
+  "description": "Leaflet UK grid-reference grid ",
+  "main": "L.GridRef.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazlauskis/Leaflet.GridRef.git"
+  },
+  "keywords": [
+    "grid",
+    "reference",
+    "leaflet",
+    "uk"
+  ],
+  "author": "Karolis Kazlauskis",
+  "license": "SEE LICENSE IN LICENCE.md",
+  "bugs": {
+    "url": "https://github.com/kazlauskis/Leaflet.GridRef/issues"
+  },
+  "homepage": "https://github.com/kazlauskis/Leaflet.GridRef#readme"
+}
