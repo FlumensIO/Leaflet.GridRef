@@ -6,8 +6,8 @@
 
     //AMD
     if (typeof define === 'function' && define.amd) {
-      define(['leaflet', 'LatLon', 'OsGridRef', 'exports'], function (L, LatLon, OsGridRef, exports) {
-        root.GridRef = factory(root, exports, L, LatLon, OsGridRef);
+      define(['leaflet', 'geodesy', 'exports'], function (L, geodesy, exports) {
+        root.GridRef = factory(root, exports, L, geodesy.LatLonEllipsoidal, geodesy.OsGridRef);
       });
 
       //Browser global
