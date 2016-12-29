@@ -131,8 +131,10 @@
       var granularity;
       if (zoom < 9) {
         granularity = 1;
-      } else if (zoom < 12) {
+      } else if (zoom < 11) {
         granularity = 10;
+      } else if (zoom < 13) {
+        granularity = 50;
       } else if (zoom < 15) {
         granularity = 100;
       } else {
