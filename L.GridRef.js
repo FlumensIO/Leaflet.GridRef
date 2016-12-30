@@ -17,7 +17,7 @@
   }(function (root, m, L, LatLon, OsGridRef) {
   'use strict';
 
-  var GRID_STEP = 100000; // meters
+  var GRID_STEP = 100000; // metres
 
   L.GridRef = L.Polyline.extend({
     options: {
