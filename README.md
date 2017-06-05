@@ -12,7 +12,7 @@ gridRef.addTo(map);
 
 ## Requirements
 
-OsGridRef and LatLon from [here](http://www.movable-type.co.uk/scripts/latlong-gridref.html)
+BIGU from [here](https://www.github.com/kazlauskis/BIGU)
 
 ## Line Options
 

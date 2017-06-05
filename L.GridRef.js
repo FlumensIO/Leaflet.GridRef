@@ -6,15 +6,15 @@
 
     //AMD
     if (typeof define === 'function' && define.amd) {
-      define(['leaflet', 'geodesy', 'exports'], function (L, geodesy, exports) {
-        root.GridRef = factory(root, exports, L, geodesy.LatLonEllipsoidal, geodesy.OsGridRef);
+      define(['leaflet', 'bigu', 'exports'], function (L, BIGU, exports) {
+        root.GridRef = factory(root, exports, L, BIGU);
       });
 
       //Browser global
     } else {
-      root.GridRef = factory(root, {}, L, LatLon, OsGridRef);
+      root.GridRef = factory(root, {}, L, BIGU);
     }
-  }(function (root, m, L, LatLon, OsGridRef) {
+  }(function (root, m, L, BIGU) {
   'use strict';
 
   var GRID_STEP = 100000; // metres
@@ -70,10 +70,9 @@
       var side = 0;
 
       function addPoint(side, length) {
-        var eastNorth = OsGridRef(west + side * step, south + length * step);
-        // console.log('x ' + (west + side * step)  + ' y: ' + (south + length * step))
-        var point = OsGridRef.osGridToLatLon(eastNorth);
-        polylinePoints.push(new L.LatLng(point.lat, point.lon));
+        const point = new BIGU.OSRef(west + side * step, south + length * step)
+          .to_latLng();
+        polylinePoints.push([point.lat, point.lng]);
       }
 
       // draw lines lengthwise
@@ -144,21 +143,23 @@
     },
 
     _getGraticuleBounds: function (bounds, step) {
-      var p = new LatLon(bounds.getSouth(), bounds.getWest(), LatLon.datum.WGS84);
-      var grid = OsGridRef.latLonToOsGrid(p);
-      var west = grid.easting;
+      // var grid = BIGU.latlng_to_grid_coords(bounds.getSouth(), bounds.getWest());
+      var grid = new BIGU.WGS84LatLng(bounds.getSouth(), bounds.getWest())
+        .to_OSGB1936_latlng().to_os_coords();
+      var west = grid.x;
       west -= west % step; // drop modulus
       west -= step; // add boundry
-      var south = grid.northing;
+      var south = grid.y;
       south -= south % step; // drop modulus
       south -= step; // add boundry
 
-      p = new LatLon(bounds.getNorth(), bounds.getEast(), LatLon.datum.WGS84);
-      grid = OsGridRef.latLonToOsGrid(p);
-      var east = grid.easting;
+      var grid = new BIGU.WGS84LatLng(bounds.getNorth(), bounds.getEast())
+        .to_OSGB1936_latlng().to_os_coords();
+      // var grid = BIGU.latlng_to_grid_coords(bounds.getNorth(), bounds.getEast());
+      var east = grid.x;
       east -= east % step; // drop modulus
       east += step; // add boundry
-      var north = grid.northing;
+      var north = grid.y;
       north -= north % step; // drop modulus
       north += step; // add boundry
 
