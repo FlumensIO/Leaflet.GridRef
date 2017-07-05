@@ -70,7 +70,7 @@
       var side = 0;
 
       function addPoint(side, length) {
-        const point = new BIGU.OSRef(west + side * step, south + length * step)
+        var point = new BIGU.OSRef(west + side * step, south + length * step)
           .to_latLng();
         polylinePoints.push([point.lat, point.lng]);
       }
