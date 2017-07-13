@@ -6,7 +6,7 @@
 
     //AMD
     if (typeof define === 'function' && define.amd) {
-      define(['leaflet', 'bigu', 'exports'], function (L, BIGU, exports) {
+      define(['leaflet', 'BIGU', 'exports'], function (L, BIGU, exports) {
         root.GridRef = factory(root, exports, L, BIGU);
       });
 
