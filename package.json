@@ -16,6 +16,10 @@
     "leaflet",
     "uk"
   ],
+   "dependencies": {
+     "bigu": "kazlauskis/BIGU#v0.1.0",
+     "leaflet": "^0.7.7"
+  },
   "author": "Karolis Kazlauskis",
   "license": "SEE LICENSE IN LICENCE.md",
   "bugs": {
