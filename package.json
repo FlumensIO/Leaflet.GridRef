@@ -1,6 +1,6 @@
 {
   "name": "leaflet.gridref",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Leaflet UK grid-reference grid ",
   "main": "L.GridRef.js",
   "scripts": {
@@ -16,9 +16,9 @@
     "leaflet",
     "uk"
   ],
-   "dependencies": {
-     "bigu": "kazlauskis/BIGU#v0.1.0",
-     "leaflet": "^0.7.7"
+  "dependencies": {
+    "bigu": "kazlauskis/bigu#v0.2.1",
+    "leaflet": "^0.7.7"
   },
   "author": "Karolis Kazlauskis",
   "license": "SEE LICENSE IN LICENCE.md",
