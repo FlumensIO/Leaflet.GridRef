@@ -6,15 +6,15 @@
 
     //AMD
     if (typeof define === 'function' && define.amd) {
-      define(['leaflet', 'BIGU', 'exports'], function (L, BIGU, exports) {
-        root.GridRef = factory(root, exports, L, BIGU);
+      define(['leaflet', 'bigu', 'exports'], function (L, bigu, exports) {
+        root.GridRef = factory(root, exports, L, bigu);
       });
 
       //Browser global
     } else {
-      root.GridRef = factory(root, {}, L, BIGU);
+      root.GridRef = factory(root, {}, L, bigu);
     }
-  }(function (root, m, L, BIGU) {
+  }(function (root, m, L, bigu) {
   'use strict';
 
   var GRID_STEP = 100000; // metres
@@ -70,7 +70,7 @@
       var side = 0;
 
       function addPoint(side, length) {
-        var point = new BIGU.OSRef(west + side * step, south + length * step)
+        var point = new bigu.OSRef(west + side * step, south + length * step)
           .to_latLng();
         polylinePoints.push([point.lat, point.lng]);
       }
@@ -143,8 +143,8 @@
     },
 
     _getGraticuleBounds: function (bounds, step) {
-      // var grid = BIGU.latlng_to_grid_coords(bounds.getSouth(), bounds.getWest());
-      var grid = new BIGU.WGS84LatLng(bounds.getSouth(), bounds.getWest())
+      // var grid = bigu.latlng_to_grid_coords(bounds.getSouth(), bounds.getWest());
+      var grid = new bigu.WGS84LatLng(bounds.getSouth(), bounds.getWest())
         .to_OSGB1936_latlng().to_os_coords();
       var west = grid.x;
       west -= west % step; // drop modulus
@@ -153,9 +153,9 @@
       south -= south % step; // drop modulus
       south -= step; // add boundry
 
-      var grid = new BIGU.WGS84LatLng(bounds.getNorth(), bounds.getEast())
+      var grid = new bigu.WGS84LatLng(bounds.getNorth(), bounds.getEast())
         .to_OSGB1936_latlng().to_os_coords();
-      // var grid = BIGU.latlng_to_grid_coords(bounds.getNorth(), bounds.getEast());
+      // var grid = bigu.latlng_to_grid_coords(bounds.getNorth(), bounds.getEast());
       var east = grid.x;
       east -= east % step; // drop modulus
       east += step; // add boundry

@@ -12,7 +12,7 @@ gridRef.addTo(map);
 
 ## Requirements
 
-BIGU from [here](https://www.github.com/kazlauskis/BIGU)
+bigu from [here](https://www.github.com/kazlauskis/bigu)
 
 ## Line Options
 
