@@ -1,14 +1,14 @@
 {
-  "name": "leaflet.gridref",
-  "version": "1.0.3",
+  "name": "@flumens/leaflet.gridref",
+  "version": "1.1.0",
   "description": "Leaflet UK grid-reference grid ",
-  "main": "L.GridRef.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kazlauskis/Leaflet.GridRef.git"
+    "url": "git+https://github.com/flumensIO/Leaflet.GridRef.git"
   },
   "keywords": [
     "grid",
@@ -16,9 +16,8 @@
     "leaflet",
     "uk"
   ],
-  "dependencies": {
-    "bigu": "kazlauskis/bigu#v0.2.1",
-    "leaflet": "^0.7.7"
+  "peerDependencies": {
+    "leaflet": ">=0.7.7"
   },
   "author": "Karolis Kazlauskis",
   "license": "SEE LICENSE IN LICENCE.md",

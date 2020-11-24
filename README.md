@@ -10,10 +10,6 @@ var gridRef = new L.GridRef(options);
 gridRef.addTo(map);
 ```
 
-## Requirements
-
-bigu from [here](https://www.github.com/kazlauskis/bigu)
-
 ## Line Options
 
 ```javascript
@@ -23,7 +19,6 @@ var options = {
       opacity: 1,
 };
 ```
-
 
 ## Bugs and feature requests
 
